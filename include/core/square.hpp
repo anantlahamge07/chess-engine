@@ -1,6 +1,7 @@
 #pragma once
 #include "types.hpp"
 #include <string>
+constexpr std::array<char, 8> files = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
 
 char get_file(SquareIndex squareIndex);
 

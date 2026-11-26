@@ -46,5 +46,20 @@ typedef struct SquareIndex {
     uint8_t square;
 };
 
+// flags for special moves
+enum class MoveFlags {
+    EN_PASSANT,
+    PROMOTION,
+    CASTLE,
+    DOUBLE_PAWN_PUSH
+};
+
+typedef struct Move {
+    SquareIndex from;
+    SquareIndex to;
+    PieceType promotion;
+    MoveFlags moveFlags;
+};
+
 // represents 64 squares using a 64 bit integer
 uint64_t bitBoard;
