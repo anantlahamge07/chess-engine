@@ -20,6 +20,13 @@ enum class PieceType: uint8_t {
     KING
 };
 
+enum class CastlingRights: uint8_t {
+    WHITE_KINGSIDE = 1,
+    WHITE_QUEENSIDE = 2,
+    BLACK_KINGSIDE = 4,
+    BLACK_QUEENSIDE = 8
+};
+
 // sturtc representing a pice of the game
 typedef struct Piece {
     PieceType type;

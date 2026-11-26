@@ -2,22 +2,22 @@
 #include "types.hpp"
 #include <array>
 
-namespace chess {
+// namespace chess {
+// }
 
-    class Board {
+class Board {
 
-        private:
-            std::array<Piece, 64> board{};
+    private:
+        std::array<Piece, 64> board{};
 
-        public:
-            Board() = default;
+    public:
+        Board() = default;
 
-            Piece retrieve_piece() const;
+        Piece retievePiece() const;
 
-            bool place_piece();
+        void placePiece();
 
-            bool remove_piece(Piece piece);
+        void removePiece(Piece piece);
 
-            bool clear_board();
-    }
-}
+        void clearBoard();
+};
