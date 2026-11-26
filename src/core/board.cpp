@@ -26,3 +26,7 @@ void Board::clearBoard() {
 Piece Board::retrievePiece(SquareIndex squareIndex) const {
     return this->board[squareIndex.square];
 }
+
+bool Board::is_occupied(SquareIndex squareIndex) {
+    return this->board[squareIndex.square].type != PieceType::NONE;
+}

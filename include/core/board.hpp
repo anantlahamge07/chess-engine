@@ -23,4 +23,6 @@ class Board {
         void removePiece(SquareIndex squareIndex);
 
         void clearBoard();
+
+        bool is_occupied(SquareIndex squareIndex);
 };
