@@ -20,11 +20,6 @@ enum class PieceType: uint8_t {
     KING
 };
 
-// represents an empty piece
-constexpr Piece EmptyPiece{
-    PieceType::NONE,
-    Color::WHITE
-};
 
 
 enum class CastlingRights: uint8_t {
@@ -34,15 +29,20 @@ enum class CastlingRights: uint8_t {
     BLACK_QUEENSIDE = 8
 };
 
-// sturtc representing a pice of the game
-typedef struct Piece {
+// struct representing a pice of the game
+struct Piece {
     PieceType type;
     Color color;
+};
+// represents an empty piece
+constexpr Piece EmptyPiece{
+    PieceType::NONE,
+    Color::WHITE
 };
 
 
 // represents a square integer between 0 and 63 (for each square of the chess board)
-typedef struct SquareIndex {
+struct SquareIndex {
     uint8_t square;
 };
 
@@ -54,12 +54,12 @@ enum class MoveFlags {
     DOUBLE_PAWN_PUSH
 };
 
-typedef struct Move {
+struct Move {
     SquareIndex from;
     SquareIndex to;
     PieceType promotion;
     MoveFlags moveFlags;
 };
 
-// represents 64 squares using a 64 bit integer
-uint64_t bitBoard;
+// // represents 64 squares using a 64 bit integer
+// uint64_t bitBoard;

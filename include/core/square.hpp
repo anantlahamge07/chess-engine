@@ -1,15 +1,17 @@
 #pragma once
 #include "types.hpp"
 #include <string>
+#include <array>
+#include <optional>
 constexpr std::array<char, 8> files = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
 
-char get_file(SquareIndex squareIndex);
+char getFile(SquareIndex squareIndex);
 
-uint8_t get_rank(SquareIndex squareIndex);
+uint8_t getRank(SquareIndex squareIndex);
 
-SquareIndex get_squareindex(char file, uint8_t rank);
+SquareIndex getSquareIndex(char file, uint8_t rank);
 
-bool validate_square(SquareIndex squareIndex);
+bool validateSquare(SquareIndex squareIndex);
 
-SquareIndex convert_chess_notation(std::string chess_notation);
+std::optional<SquareIndex> convertChessNotation(std::string chess_notation);
 
