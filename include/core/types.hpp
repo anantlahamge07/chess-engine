@@ -20,8 +20,6 @@ enum class PieceType: uint8_t {
     KING
 };
 
-
-
 enum class CastlingRights: uint8_t {
     WHITE_KINGSIDE = 1,
     WHITE_QUEENSIDE = 2,
