@@ -25,4 +25,6 @@ class Board {
         void clearBoard();
 
         bool is_occupied(SquareIndex squareIndex);
+
+        void setupInitialBoard();
 };

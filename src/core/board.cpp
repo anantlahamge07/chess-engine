@@ -30,3 +30,7 @@ Piece Board::retrievePiece(SquareIndex squareIndex) const {
 bool Board::is_occupied(SquareIndex squareIndex) {
     return this->board[squareIndex.square].type != PieceType::NONE;
 }
+// TODO: implement me
+void Board::setupInitialBoard() {
+    return;
+}

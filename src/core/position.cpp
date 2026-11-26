@@ -1,8 +1,11 @@
 #include "../../include/core/position.hpp"
+#include "../../include/core/board.hpp"
 
 
 
-Position::Position() {};
+Position::Position(): initialPosition(true), castlingRights(0x0F), board(), sideToMove(Color::WHITE), halfMoveCount(0), fullMoveCount(1) {
+    this->board.setupInitialBoard();
+}
 
 Board Position::getBoard() const {
     return this->board;
