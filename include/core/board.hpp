@@ -13,9 +13,9 @@ class Board {
     public:
         Board() = default;
 
-        Piece retievePiece() const;
+        Piece retrievePiece(PieceType pieceType, Color color) const;
 
-        void placePiece();
+        void placePiece(Piece piece, SquareIndex squareIndex);
 
         void removePiece(Piece piece);
 

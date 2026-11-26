@@ -8,10 +8,10 @@ class Position {
 
     private:
         bool initialPosition;
-        CastlingRights castlingRights;
+        uint8_t castlingRights;
         Board board;
         Color sideToMove;
-        SquareIndex EnPassantSquare;
+        SquareIndex enPassantSquare;
         // this is important for the 50-move rule
         uint8_t halfMoveCount;
         uint32_t fullMoveCount;
@@ -19,10 +19,10 @@ class Position {
 
 
     public:
-        Position(): initialPosition(true), sideToMove(Color::WHITE), halfMoveCount(0), fullMoveCount(0) {};
+        Position(): initialPosition(true), castlingRights(1 | 2 | 4 | 8), sideToMove(Color::WHITE), halfMoveCount(0), fullMoveCount(1) {};
 
         // all the getters
-        Board& getBoard() const;
+        Board getBoard() const;
 
         Color getSideToMove() const;
 
@@ -35,15 +35,15 @@ class Position {
         bool getInitialPosition() const;
 
         // all the setters
-        void setSideToMove();
+        void setSideToMove(Color sideToMove);
 
-        void setEnPassantSquare();
+        void setEnPassantSquare(SquareIndex enPassentSquare);
 
-        void setHalfMoveCount();
+        void setHalfMoveCount(uint8_t halfMovecount);
         
-        void setFullMoveCount();
+        void setFullMoveCount(uint8_t fullMovecount);
 
-        bool isSquareOccupied();
+        bool isSquareOccupied(SquareIndex squareIndex);
 
         void reset();
 

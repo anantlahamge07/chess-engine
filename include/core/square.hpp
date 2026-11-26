@@ -10,5 +10,5 @@ SquareIndex get_squareindex(char file, uint8_t rank);
 
 bool validate_square(SquareIndex squareIndex);
 
-SquareIndex convert_chess_notation(string chess_notation);
+SquareIndex convert_chess_notation(std::string chess_notation);
 
