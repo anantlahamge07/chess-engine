@@ -28,7 +28,9 @@ typedef struct Piece {
 
 
 // represents a square integer between 0 and 63 (for each square of the chess board)
-uint8_t squareIndex;
+typedef struct SquareIndex {
+    uint8_t square;
+};
 
 // represents 64 squares using a 64 bit integer
 uint64_t bitBoard;
