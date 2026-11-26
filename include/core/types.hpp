@@ -20,6 +20,13 @@ enum class PieceType: uint8_t {
     KING
 };
 
+// represents an empty piece
+constexpr Piece EmptyPiece{
+    PieceType::NONE,
+    Color::WHITE
+};
+
+
 enum class CastlingRights: uint8_t {
     WHITE_KINGSIDE = 1,
     WHITE_QUEENSIDE = 2,

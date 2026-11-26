@@ -19,7 +19,7 @@ class Position {
 
 
     public:
-        Position(): initialPosition(true), castlingRights(1 | 2 | 4 | 8), sideToMove(Color::WHITE), halfMoveCount(0), fullMoveCount(1) {};
+        Position();
 
         // all the getters
         Board getBoard() const;

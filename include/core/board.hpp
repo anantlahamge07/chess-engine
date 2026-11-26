@@ -2,8 +2,7 @@
 #include "types.hpp"
 #include <array>
 
-// namespace chess {
-// }
+
 
 class Board {
 
@@ -13,11 +12,15 @@ class Board {
     public:
         Board() = default;
 
-        Piece retrievePiece(PieceType pieceType, Color color) const;
+        bool Board::is_inBound(uint8_t x) const;
+
+        Piece retrievePiece(SquareIndex squareIndex) const;
 
         void placePiece(Piece piece, SquareIndex squareIndex);
 
-        void removePiece(Piece piece);
+        void Board::movePiece(SquareIndex from, SquareIndex to);
+
+        void removePiece(SquareIndex squareIndex);
 
         void clearBoard();
 };
