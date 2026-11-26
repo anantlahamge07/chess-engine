@@ -12,7 +12,7 @@ uint8_t getRank(SquareIndex squareIndex) {
 
 
 bool validateSquare(SquareIndex squareIndex) {
-    return (squareIndex.square >= 0 && squareIndex.square < 64);
+    return (squareIndex.square < 64);
 }
 SquareIndex getSquareIndex(char file, uint8_t rank) {
     auto it = std::find(files.begin(), files.end(), file);
@@ -24,7 +24,10 @@ SquareIndex getSquareIndex(char file, uint8_t rank) {
 
 std::optional<SquareIndex> convertChessNotation(std::string chessNotation) {
     char file = chessNotation[0];
-    uint8_t fileIndex = *(std::find(files.begin(), files.end(), file));
+    auto fileIndex = std::find(files.begin(), files.end(), file);
+    if (fileIndex == files.end()) {
+        return std::nullopt;
+    }
     std::string rank_str = "";
     int k = 0;
     while(chessNotation[k] != '\0') { 
@@ -36,6 +39,9 @@ std::optional<SquareIndex> convertChessNotation(std::string chessNotation) {
         k++;
     }
     int rank = std::stoi(rank_str);
+    if (rank <= 0 || rank >= 64) {
+        return std::nullopt;
+    }
     SquareIndex squareIndex = getSquareIndex(file, rank);
 
     if (validateSquare(squareIndex)) {

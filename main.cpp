@@ -4,7 +4,7 @@ int main(int argc, char const *argv[])
 {
     SquareIndex squareIndex;
     squareIndex.square = 0;
-    std::string chessNotation = "a10";
+    std::string chessNotation = "21";
     auto t = getSquareIndex('a', 10);
     auto res = convertChessNotation(chessNotation);
     printf("%u\n", t.square);
