@@ -45,3 +45,7 @@ bool MoveGenerator::isFriendlyPiece(const Position &postion, SquareIndex squareI
 bool MoveGenerator::isSquareEmpty(const Position &position, SquareIndex squareIndex) {
     return !(position.getBoard().is_occupied(squareIndex));
 }
+
+std::vector<Move> MoveGenerator::getGeneratedMoves() const {
+    return this->generatedMoves;
+}

@@ -23,7 +23,7 @@ class MoveGenerator {
         void generateRookMoves();
         void generateQueenMoves();
         void generateKingMoves();
-
+        std::vector<Move> getGeneratedMoves() const;
         // helper functions, which will make our life easier
         void addMove(Move move);
         bool isFriendlyPiece(const Position &postion, SquareIndex squareIndex);
