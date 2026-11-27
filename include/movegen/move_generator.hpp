@@ -16,6 +16,7 @@ class MoveGenerator {
     private:
 
         std::vector<Move> generatedMoves{};
+        Color color;
         void generatePawnMoves();
         void generateKnightMoves();
         void generateBishopMoves();
@@ -25,5 +26,6 @@ class MoveGenerator {
 
         // helper functions, which will make our life easier
         void addMove(Move move);
-        bool isFriendlyPiece(SquareIndex squareIndex);
+        bool isFriendlyPiece(const Position &postion, SquareIndex squareIndex);
+        bool MoveGenerator::isSquareEmpty(const Position &position, SquareIndex suqareIndex);
 }
