@@ -46,6 +46,7 @@ struct SquareIndex {
 
 // flags for special moves
 enum class MoveFlags {
+    NONE,   // added to represent a normal move
     EN_PASSANT,
     PROMOTION,
     CASTLE,

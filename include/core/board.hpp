@@ -12,13 +12,13 @@ class Board {
     public:
         Board() = default;
 
-        bool Board::is_inBound(uint8_t x) const;
+        bool is_inBound(uint8_t x) const;
 
         Piece retrievePiece(SquareIndex squareIndex) const;
 
         void placePiece(Piece piece, SquareIndex squareIndex);
 
-        void Board::movePiece(SquareIndex from, SquareIndex to);
+        void movePiece(SquareIndex from, SquareIndex to);
 
         void removePiece(SquareIndex squareIndex);
 
